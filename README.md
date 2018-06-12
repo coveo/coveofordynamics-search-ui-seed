@@ -1,4 +1,4 @@
-# search-ui-seed
+# coveofordynamics-search-ui-seed
 A fast starter / seed project to extend the Coveo Javascript Framework
 
 This project is meant to display a working starting point for a project that wish to extend the [Coveo Javascript Search Framework](https://github.com/coveo/search-ui) with additional components.
@@ -51,7 +51,7 @@ If you are using Visual Studio Code, you can install the following extensions:
 
 ### [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
 
-Shows inline linter problems in the code based on the `tslint.json` file. This will ensure that you are consistent with the formatting standards. 
+Shows inline linter problems in the code based on the `tslint.json` file. This will ensure that you are consistent with the formatting standards.
 
 ### [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters)
 

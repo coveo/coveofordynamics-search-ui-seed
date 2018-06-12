@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+    <FileToFile map="WebResources\coveo_\searchpages\tutorial.html" to="../../pages/tutorial.html" />
+    <FileToFile map="WebResources\coveo2_\coveo.extension.js" to="../../bin/js/coveo.extension.js" />
+    <FileToFile map="WebResources\coveo2_\coveo.extension.js.map" to="../../bin/js/coveo.extension.js.map" />
+    <FileToFile map="WebResources\coveo2_\coveoextension.css" to="../../bin/css/coveoextension.css" />
+</Mapping>

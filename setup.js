@@ -7,7 +7,8 @@ const directoriesToCreate = [
   "./bin/css",
   "./bin/image",
   "./bin/js",
-  "./bin/templates"
+  "./bin/templates",
+  "./bin/solution"
 ]
 
 const filesToCopy = [{
@@ -27,6 +28,9 @@ const folderToCopy = [{
 },{
   "src":'./pages',
   "dest":'./bin'
+},{
+  "src":'./Serialized',
+  "dest":'./bin/Serialized'
 }];
 
 directoriesToCreate.filter(directory => !fs.existsSync(directory))

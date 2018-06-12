@@ -30,6 +30,12 @@ export class HelloWorld extends Component {
     this.options = ComponentOptions.initComponentOptions(element, HelloWorld, options);
 
     $$(this.element).text(this.options.dummyOptionText);
+    $$(this.element).on('click', () => {
+      Xrm.Navigation.openAlertDialog({
+        text: this.options.dummyOptionText,
+        confirmButtonLabel: 'Close'
+      });
+    });
 
     this.bind.onRootElement(QueryEvents.buildingQuery, (args: IBuildingQueryEventArgs) => this.handleBuildingQuery(args));
   }

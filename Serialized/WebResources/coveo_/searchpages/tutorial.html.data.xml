@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{1cfeca8a-486e-e811-a83b-000d3a37c848}</WebResourceId>
+  <Name>coveo_/searchpages/tutorial.html</Name>
+  <WebResourceType>1</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/coveo_searchpagestutorialhtml1CFECA8A-486E-E811-A83B-000D3A37C848</FileName>
+</WebResource>

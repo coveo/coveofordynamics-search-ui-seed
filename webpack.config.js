@@ -11,12 +11,8 @@ if (minimize) {
 // Fail plugin will allow the webpack ts-loader to fail correctly when the TS compilation fails
 var plugins = [failPlugin];
 
-if (minimize) {
-  plugins.push(new webpack.optimize.UglifyJsPlugin());
-}
-
-
 module.exports = {
+  mode: minimize ? "production" : "development",
   entry: {
     'coveo.extension': './src/Index'
   },
@@ -39,7 +35,7 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [{
-      test: /\.ts$/, 
+      test: /\.ts$/,
       loader: 'ts-loader',
       options: {}
     }]

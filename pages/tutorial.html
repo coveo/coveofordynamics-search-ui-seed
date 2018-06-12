@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+            <html><head>
+  <title>All Content</title>
+  <meta about="Search all content at once.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height">
+  <script src="../../ClientGlobalContext.js.aspx" type="text/javascript"></script>
+  <script src="https://static.cloud.coveo.com/searchui/v2.4094/js/CoveoJsSearch.js"></script>
+  <script src="../search/js/coveofordynamicssearchui.js"></script>
+  <script src="../search/js/search.js"></script>
+  <script src="../search/js/templates/templates.js"></script>
+  <script src="../../coveo2_/coveo.extension.js"></script>
+  <!-- Web Resource pointing to Coveo.Dynamics.css -->
+  <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.4094/css/CoveoFullSearch.css">
+  <link rel="stylesheet" href="../search/css/search.css">
+  <link rel="stylesheet" href="../../coveo2_/coveoextension.css">
+
+  <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+          CoveoDynamics.init(document.getElementById("search"),
+                              function(data) {
+                              });
+      });
+  </script>
+</head>
+<body><div id="search" class="CoveoSearchInterface" data-enable-history="true" data-design="new">
+  <div class="CoveoHelloWorld"></div>
+  <div class="CoveoAnalytics"></div>
+  <div class="coveo-tab-section">
+    <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+    <a class="CoveoTab" data-id="Cases" data-caption="Cases" data-expression="@objecttype==(incident)"></a>
+    <a class="CoveoTab" data-id="Catalog" data-caption="Catalog" data-expression="@objecttype==(product)"></a>
+    <a class="CoveoTab" data-id="KnowledgeBase" data-caption="Knowledge Base" data-expression="@objecttype==(kbarticle,knowledgearticle,saleslitterature)"></a>
+    <a class="CoveoTab" data-id="Opportunities" data-caption="Opportunities" data-expression="@objecttype==(opportunity)"></a>
+  </div>
+  <div class="coveo-search-section">
+    <div class="CoveoSettings"></div>
+    <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+  </div>
+  <div class="coveo-main-section">
+    <div class="coveo-facet-column">
+      <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
+      <div class="CoveoFacet" data-title="Year" data-field="@year"></div>
+      <div class="CoveoFacet" data-title="Month" data-field="@month"></div>
+      <div class="CoveoFacet" data-title="Customer" data-field="@dycustomeridstring" data-tab="Cases"></div>
+      <div class="CoveoFacet" data-title="Priority" data-field="@dyprioritycodestring" data-tab="Cases"></div>
+      <div class="CoveoFacet" data-title="Owner" data-field="@dyowneridstring" data-tab="Cases"></div>
+      <div class="CoveoFacet" data-title="Status" data-field="@dystatuscodestring" data-tab="Cases"></div>
+      <div class="CoveoFacet" data-title="Contact" data-field="@dycontactidstring" data-tab="Cases"></div>
+      <div class="CoveoFacet" data-title="Product Structure" data-field="@dyproductstructurestring" data-tab="Catalog"></div>
+      <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="KnowledgeBase"></div>
+      <div class="CoveoFacet" data-title="Customer" data-field="@dycustomeridstring" data-tab="Opportunities"></div>
+      <div class="CoveoFacet" data-title="Owner" data-field="@dyowneridstring" data-tab="Opportunities"></div>
+      <div class="CoveoFacet" data-title="Status" data-field="@dystatuscodestring" data-tab="Opportunities"></div>
+    </div>
+    <div class="coveo-results-column">
+      <div class="CoveoShareQuery"></div>
+      <div class="CoveoExportToExcel"></div>
+      <div class="CoveoPreferencesPanel">
+        <div class="CoveoResultsPreferences"></div>
+        <div class="CoveoResultsFiltersPreferences"></div>
+      </div>
+      <div class="CoveoBreadcrumb"></div>
+      <div class="coveo-results-header">
+        <div class="coveo-summary-section">
+          <span class="CoveoQuerySummary"></span>
+          <span class="CoveoQueryDuration"></span>
+        </div>
+        <div class="coveo-result-layout-section">
+          <span class="CoveoResultLayout"></span>
+        </div>
+        <div class="coveo-sort-section">
+          <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+          <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+        </div>
+      </div>
+      <div class="CoveoHiddenQuery"></div>
+      <div class="CoveoDidYouMean"></div>
+      <div class="CoveoErrorReport" data-pop-up="false"></div>
+      <div class="CoveoResultList" data-layout="list" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+        <script id="CRMCase" class="result-template" type="text/html" data-layout="list" data-field-dyincidentid=""><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+            <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+            <div class="CoveoQuickview"></div>
+          </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoCrmResultLink" data-always-open-in-new-window='true'></a>
+              </div>
+              <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                <div class="coveo-result-row">
+                  <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+                </div>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@dyprioritycodestring" data-text-caption="Priority" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dycustomeridstring" data-text-caption="Customer" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dystatuscodestring" data-text-caption="Status" style="margin-right:30px;"></span>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@dycontactidstring"  data-caption="Contact" style="margin-right:30px;"></tr>
+                  <tr data-field="@dyowneridstring" data-caption="Owner" data-helper="email" data-html-value="true" style="margin-right:30px;"></tr>
+                  <tr data-field="@dysubjectidstring" data-caption="Subject" style="margin-right:30px;"></tr>
+                  <tr data-field="@dycaseorigincodestring" data-caption="Origin" style="margin-right:30px;"></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div></script>
+        <script id="CRMDefault" class="result-template" type="text/html" data-layout="list" data-field-connectortype="Dynamics2Crawler"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+            <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+            <div class="CoveoQuickview"></div>
+          </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoCrmResultLink" data-always-open-in-new-window='true'></a>
+              </div>
+              <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                <div class="coveo-result-row">
+                  <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+                </div>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@dyname" data-text-caption="Name" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dytotalamount" data-text-caption="Total" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dystatuscodestring" data-text-caption="Status" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dycustomeridstring" data-text-caption="Customer" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dyjobtitle" data-text-caption="Work title" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dyemailaddress1" data-text-caption="Email" data-helper="email" data-html-value="true" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@dytelephone1"  data-text-caption="Phone" style="margin-right:30px;"></span>
+              </div>
+            </div>
+          </div>
+        </div></script>
+        <script id="Default" class="result-template" type="text/html" data-layout="list"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+            <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+            <div class="CoveoQuickview"></div>
+          </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoCrmResultLink"></a>
+              </div>
+              <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                <div class="coveo-result-row">
+                  <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+                </div>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <div class="CoveoPrintableUri"></div>
+              </div>
+            </div>
+          </div>
+        </div></script>
+      </div>
+      <div class="CoveoResultList" data-layout="card" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+        <script id="CardCRMCase" class="result-template" type="text/html" data-layout="card" data-field-dyincidentid=""><div class="coveo-result-frame">
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell" style="width: 32px; vertical-align: middle;">
+              <div class="CoveoIcon" data-small="true" data-with-label="false">
+              </div>
+            </div>
+            <div class="coveo-result-cell" style="text-align:left; padding-left: 10px; vertical-align: middle;">
+              <a class="CoveoCrmResultLink" data-always-open-in-new-window='true'></a>
+            </div>
+          </div>
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell">
+              <span class="CoveoExcerpt">
+              </span>
+            </div>
+          </div>
+          <div class="CoveoCardActionBar">
+            <div class="CoveoQuickview"></div>
+            <div class="CoveoCardOverlay" data-title="Details" data-icon="search">
+              <table class="CoveoFieldTable" data-allow-minimization="false">
+                <tbody>
+                  <tr data-field="@dysubjectidstring" data-caption="Subject"></tr>
+                  <tr data-field="@dyticketnumber" data-caption="Case Number"></tr>
+                  <tr data-field="@dyprioritycodestring" data-caption="Priority"></tr>
+                  <tr data-field="@dycaseorigincodestring" data-caption="Origin"></tr>
+                  <tr data-field="@dycustomeridstring" data-caption="Customer"></tr>
+                  <tr data-field="@dyowneridstring" data-caption="Owner" data-helper="email" data-html-value="true"></tr>
+                  <tr data-field="@dystatuscodestring"  data-caption="Status"></tr>
+                  <tr data-field="@dycontactidstring"  data-caption="Contact"></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </script>
+        <script id="CardCRMDefault" class="result-template" type="text/html" data-layout="card" data-field-connectortype="Dynamics2Crawler"><div class="coveo-result-frame">
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell" style="width: 32px; vertical-align: middle;">
+              <div class="CoveoIcon" data-small="true" data-with-label="false">
+              </div>
+            </div>
+            <div class="coveo-result-cell" style="text-align:left; padding-left: 10px; vertical-align: middle;">
+              <a class="CoveoCrmResultLink" data-always-open-in-new-window='true'></a>
+            </div>
+          </div>
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell">
+              <span class="CoveoExcerpt">
+              </span>
+            </div>
+          </div>
+          <div class="CoveoCardActionBar">
+            <div class="CoveoQuickview"></div>
+            <div class="CoveoCardOverlay" data-title="Details" data-icon="search">
+              <table class="CoveoFieldTable" data-allow-minimization="false">
+                <tbody>
+                  <tr data-field="@dyname" data-caption="Name"></tr>
+                  <tr data-field="@dytotalamount" data-caption="Total"></tr>
+                  <tr data-field="@dystatuscodestring" data-caption="Status"></tr>
+                  <tr data-field="@dycustomeridstring" data-caption="Customer"></tr>
+                  <tr data-field="@dyjobtitle" data-caption="Work title"></tr>
+                  <tr data-field="@dyemailaddress1" data-caption="Email" data-helper="email" data-html-value="true"></tr>
+                  <tr data-field="@dytelephone1"  data-caption="Phone"></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </script>
+        <script id="Card" class="result-template" type="text/html" data-layout="card"><div class="coveo-result-frame">
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell" style="width: 32px; vertical-align: middle;">
+              <div class="CoveoIcon" data-small="true" data-with-label="false">
+              </div>
+            </div>
+            <div class="coveo-result-cell" style="text-align:left; padding-left: 10px; vertical-align: middle;">
+              <a class="CoveoCrmResultLink"></a>
+            </div>
+          </div>
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell">
+              <span class="CoveoExcerpt">
+              </span>
+            </div>
+          </div>
+          <div class="CoveoCardActionBar">
+            <div class="CoveoQuickview"></div>
+            <div class="CoveoCardOverlay" data-title="Details" data-icon="search">
+              <table class="CoveoFieldTable" data-allow-minimization="false">
+                <tbody>
+                  <tr data-field="@author" data-caption="Author">
+                  </tr>
+                  <tr data-field="@source" data-caption="Source">
+                  </tr>
+                  <tr data-field="@language" data-caption="Language">
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </script>
+      </div>
+      <div class="CoveoPager"></div>
+      <div class="CoveoLogo"></div>
+      <div class="CoveoResultsPerPage"></div>
+    </div>
+  </div>
+</div>
+
+
+</body></html>

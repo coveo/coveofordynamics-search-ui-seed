@@ -29,13 +29,13 @@ var configuration = {
         reports: [
             'cobertura',
             'json',
-            'lcov', 
+            'lcov',
             'text-summary'
         ],
         fixWebpackSourcePaths: true
     },
     webpack: webpackConfig,
-    browsers:['PhantomJS']
+    browsers:['Chrome']
 };
 
 module.exports = function(config) {
