@@ -27,7 +27,8 @@ module.exports = {
   externals: [{
     // Defines the module "coveo-search-ui" as external, "Coveo" is defined in the global scope. 
     // This requires you to load the original CoveoJsSearch.js file in your page.
-    "coveo-search-ui":"Coveo"
+    "coveo-search-ui":"Coveo",
+    "coveofordynamics-search-ui":"CoveoForDynamics"
   }],
   resolve: {
     extensions: ['.ts', '.js'],

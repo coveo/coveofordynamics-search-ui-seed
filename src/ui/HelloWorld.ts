@@ -1,3 +1,4 @@
+import { ContextObjects, ContextObject, Filters } from 'coveofordynamics-search-ui';
 import {
   Component,
   ComponentOptions,
@@ -38,6 +39,19 @@ export class HelloWorld extends Component {
     });
 
     this.bind.onRootElement(QueryEvents.buildingQuery, (args: IBuildingQueryEventArgs) => this.handleBuildingQuery(args));
+
+    this.registerContextObject();
+    this.registerLiquidFilter();
+  }
+
+  private registerContextObject() {
+    ContextObjects.register('helloworld', new ContextObject({
+      'hello': 'world'
+    }));
+  }
+
+  private registerLiquidFilter() {
+    Filters.registerFilter('addhelloworld', (value: string) => `${value} Hello World`);
   }
 
   private handleBuildingQuery(args: IBuildingQueryEventArgs) {
