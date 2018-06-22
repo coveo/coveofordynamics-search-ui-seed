@@ -8,6 +8,12 @@ import {
   IBuildingQueryEventArgs,
   Initialization
 } from 'coveo-search-ui';
+import { Crm } from 'coveofordynamics-search-ui';
+import { IODataCollection } from 'coveo-odata';
+
+interface IAccount {
+  name: string;
+}
 
 export interface IHelloWorldOptions {
   dummyOptionText: string;
@@ -45,9 +51,14 @@ export class HelloWorld extends Component {
   }
 
   private registerContextObject() {
-    ContextObjects.register('helloworld', new ContextObject({
-      'hello': 'world'
-    }));
+    const request = Crm.WebApi.init().resource('accounts').top(1).get();
+    request.build<IODataCollection<IAccount>>()
+        .then(accounts => accounts.value.forEach(account => {
+          console.log(account.name);
+          ContextObjects.register('helloaccount', new ContextObject({
+            'hello': account.name
+          }));
+        }));
   }
 
   private registerLiquidFilter() {
