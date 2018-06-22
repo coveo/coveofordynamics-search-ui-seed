@@ -34,7 +34,7 @@
     "coveo-search-ui": "^2.4094.8",
     "coveo-search-ui-tests": "0.0.5",
     "coveo-xrm": "^0.1.2",
-    "coveofordynamics-search-ui": "0.4.32",
+    "coveofordynamics-search-ui": "0.4.39",
     "istanbul-instrumenter-loader": "^3.0.0",
     "jasmine": "3.1.0",
     "karma": "2.0.2",
