@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const minimize = process.argv.indexOf('--minimize') !== -1;
 const colors = require('colors');
-const failPlugin = require('webpack-fail-plugin');
 if (minimize) {
   console.log('Building minified version of the library'.bgGreen.red);
 } else {
