@@ -8,7 +8,7 @@ if (minimize) {
 }
 
 // Fail plugin will allow the webpack ts-loader to fail correctly when the TS compilation fails
-var plugins = [failPlugin];
+var plugins = [];
 
 module.exports = {
   mode: minimize ? "production" : "development",
