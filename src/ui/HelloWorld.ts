@@ -1,4 +1,4 @@
-import { ContextObjects, ContextObject, Filters } from 'coveofordynamics-search-ui';
+import { ContextObjects, ContextObject, Crm, Filters } from 'coveofordynamics-search-ui';
 import {
   Component,
   ComponentOptions,
@@ -8,7 +8,6 @@ import {
   IBuildingQueryEventArgs,
   Initialization
 } from 'coveo-search-ui';
-import { Crm } from 'coveofordynamics-search-ui';
 import { IODataCollection } from 'coveo-odata';
 
 interface IAccount {

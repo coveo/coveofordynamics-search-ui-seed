@@ -1,6 +1,5 @@
 import { HelloWorld, IHelloWorldOptions } from '../../src/ui/HelloWorld';
-import { Mock, Fake, Simulate } from 'coveo-search-ui-tests';
-import { $$, InitializationEvents, QueryEvents, IBuildingQueryEventArgs } from 'coveo-search-ui';
+import { Mock, Simulate } from 'coveo-search-ui-tests';
 
 describe('HelloWorld', () => {
     let helloWorld: Mock.IBasicComponentSetup<HelloWorld>;
