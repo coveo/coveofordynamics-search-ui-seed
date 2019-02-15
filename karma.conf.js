@@ -3,13 +3,17 @@ const webpackConfig = require('./webpack.config.karma.js');
 var configuration = {
     frameworks: ['jasmine'],
     files: [
-        // Both CoveoJsSearch and CoveoJsSearchTests are included as externals, so you need include them in your testing environment.
+        // CoveoJsSearch, CoveoJsSearchTests, and CoveoForDynamics are included as externals, so you need include them in your testing environment.
         {
             pattern:  'node_modules/coveo-search-ui/bin/js/CoveoJsSearch.js',
             watched: false
         },
         {
             pattern:  'node_modules/coveo-search-ui-tests/bin/js/CoveoJsSearchTests.js',
+            watched: false
+        },
+        {
+            pattern:  'node_modules/coveofordynamics-search-ui/bin/js/CoveoForDynamics.js',
             watched: false
         },
         { pattern: 'src/Index.ts' },
