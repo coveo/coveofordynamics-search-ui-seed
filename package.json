@@ -1,6 +1,6 @@
 {
   "name": "coveofordynamics-search-ui-seed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fast starter / seed project to extend the Coveo Javascript Framework",
   "main": "index.js",
   "scripts": {
